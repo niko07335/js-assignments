@@ -310,33 +310,6 @@ function getDigitalRoot(num) {
  *   '{[(<{[]}>)]}' = true 
  */
 function isBracketsBalanced(str) {
-    // const open = ['[', '(', '{', '<'];
-    // const close = [']', ')', '}', '>'];
-    // let closeIndex = 0;
-    // let arr = str.split('');
-
-    // if (str.lengt % 2 !== 0 ||
-    //     close.indexOf(arr[0]) === -1 ||
-    //     open.indexOf(arr[arr.length-1]) === -1 ) return false;
-
-    // for (let i = 0; i < arr.length; i += 1){
-    //     if (open.indexOf(arr[i]) !== -1){ 
-    //         continue;
-    //     }
-    //     else{
-    //         closeIndex = close.indexOf(arr[i]);
-    //         if (open[closeIndex] === arr[i-1]){
-    //             arr.splice(i-1, 2); 
-    //             i = 0;  
-    //         }
-    //     }
-    // }
-    // if (arr.length != 0){
-    //     return(false);
-    //   }
-    //   else{
-    //     return(true);
-    //   }
     throw new Error('Not implemented');
 }
 
@@ -398,7 +371,6 @@ function timespanToHumanString(startDate, endDate) {
  */
 function toNaryString(num, n) {
     return num.toString(n)
-
 }
 
 
