@@ -30,7 +30,10 @@
  *
  */
 function getFizzBuzz(num) {
-    throw new Error('Not implemented');
+    if (num % 15 === 0) return 'FizzBuzz';
+    if (num % 3 === 0) return 'Fizz';
+    if (num % 5 === 0) return 'Buzz';
+    return num
 }
 
 
@@ -46,7 +49,11 @@ function getFizzBuzz(num) {
  *   10 => 3628800
  */
 function getFactorial(n) {
-    throw new Error('Not implemented');
+    let res = 1;
+    for (let i = 1; i < n+1; i +=1){
+        res = res * i;
+    }
+    return res
 }
 
 
@@ -63,7 +70,12 @@ function getFactorial(n) {
  *   -1,1  =>  0  ( = -1 + 0 + 1 )
  */
 function getSumBetweenNumbers(n1, n2) {
-    throw new Error('Not implemented');
+    let res = n1;
+    for (;n1 < n2;){
+        n1 += 1;
+        res += n1;
+    }
+    return res
 }
 
 
@@ -82,7 +94,8 @@ function getSumBetweenNumbers(n1, n2) {
  *   10,10,10 =>  true
  */
 function isTriangle(a,b,c) {
-    throw new Error('Not implemented');
+    if (a+b <=  c || a+c <= b || b+c <= a) return false;
+    return true;
 }
 
 
@@ -226,7 +239,8 @@ function reverseString(str) {
  *   34143 => 34143
  */
 function reverseInteger(num) {
-    throw new Error('Not implemented');
+
+    return num.toString().split('').reverse().join('');
 }
 
 
@@ -270,7 +284,7 @@ function isCreditCardNumber(ccn) {
  *   165536 (1+6+5+5+3+6 = 26,  2+6 = 8) => 8
  */
 function getDigitalRoot(num) {
-    throw new Error('Not implemented');
+    return (num - 1) % 9 + 1;
 }
 
 
@@ -296,6 +310,33 @@ function getDigitalRoot(num) {
  *   '{[(<{[]}>)]}' = true 
  */
 function isBracketsBalanced(str) {
+    // const open = ['[', '(', '{', '<'];
+    // const close = [']', ')', '}', '>'];
+    // let closeIndex = 0;
+    // let arr = str.split('');
+
+    // if (str.lengt % 2 !== 0 ||
+    //     close.indexOf(arr[0]) === -1 ||
+    //     open.indexOf(arr[arr.length-1]) === -1 ) return false;
+
+    // for (let i = 0; i < arr.length; i += 1){
+    //     if (open.indexOf(arr[i]) !== -1){ 
+    //         continue;
+    //     }
+    //     else{
+    //         closeIndex = close.indexOf(arr[i]);
+    //         if (open[closeIndex] === arr[i-1]){
+    //             arr.splice(i-1, 2); 
+    //             i = 0;  
+    //         }
+    //     }
+    // }
+    // if (arr.length != 0){
+    //     return(false);
+    //   }
+    //   else{
+    //     return(true);
+    //   }
     throw new Error('Not implemented');
 }
 
@@ -356,7 +397,8 @@ function timespanToHumanString(startDate, endDate) {
  *    365, 10 => '365'
  */
 function toNaryString(num, n) {
-    throw new Error('Not implemented');
+    return num.toString(n)
+
 }
 
 
