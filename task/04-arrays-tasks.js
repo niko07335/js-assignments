@@ -86,7 +86,7 @@ function getArrayOfPositives(arr) {
  * @example
  *    [ 0, 1, 'cat', 3, true, 'dog' ] => [ 'cat', 'dog' ]
  *    [ 1, 2, 3, 4, 5 ] => []
- *    [ 'cat, 'dog', 'raccon' ] => [ 'cat', 'dog', 'racoon' ]
+ *    [ 'cat', 'dog', 'raccon' ] => [ 'cat', 'dog', 'racoon' ]
  */
 function getArrayOfStrings(arr) {
    return arr.filter(x => typeof(x) === 'string');
@@ -106,7 +106,7 @@ function getArrayOfStrings(arr) {
  *    [ false, 0, NaN, '', undefined ]   => [ ]
  */
 function removeFalsyValues(arr) {
-   throw new Error('Not implemented');
+   return arr.filter(x => x);
 }
 
 /**
@@ -242,7 +242,12 @@ function toArrayOfSquares(arr) {
  *   [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ] => [ 1, 3, 6, 10, 15, 21, 28, 36, 45, 55 ]
  */
 function getMovingSum(arr) {
-   throw new Error('Not implemented');
+   let z = []
+   arr.reduce(function(sum, current) {
+      z.push(sum + current)
+      return sum + current;
+   }, 0)
+   return z;
 }
 
 /**
@@ -257,7 +262,12 @@ function getMovingSum(arr) {
  * [ "a" ] => []
  */
 function getSecondItems(arr) {
-   throw new Error('Not implemented');
+   let z = []
+   arr.reduce(function(sum, current, index) {
+      if (index % 2 !== 0) z.push(current)
+      return sum + current;
+   }, 0)
+   return z;
 }
 
 
@@ -276,7 +286,14 @@ function getSecondItems(arr) {
  *  [ 1,2,3,4,5 ] => [ 1, 2,2, 3,3,3, 4,4,4,4, 5,5,5,5,5 ]
  */
 function propagateItemsByPositionIndex(arr) {
-   throw new Error('Not implemented');
+   let mas = [];
+   if (arr === []) return z;
+   arr.map(x => {
+      let z = new Array(arr.indexOf(x) + 1);
+      mas = mas.concat(z.fill(x));
+      })
+   return  mas;
+
 }
 
 
@@ -294,7 +311,8 @@ function propagateItemsByPositionIndex(arr) {
  *   [ 10, 10, 10, 10 ] => [ 10, 10, 10 ]
  */
 function get3TopItems(arr) {
-   throw new Error('Not implemented');
+   let res = arr.sort((a, b) => b - a);
+   return res.slice(0, 3);
 
 }
  
@@ -313,7 +331,11 @@ function get3TopItems(arr) {
  *   [ 1, '2' ] => 1
  */
 function getPositivesCount(arr) {
-   throw new Error('Not implemented');
+   let counter = 0;
+   arr.map(a => {
+      if (a > 0 && typeof(a) === 'number'){ counter ++}
+   })
+   return counter;
 }
  
 /** 
@@ -330,7 +352,13 @@ function getPositivesCount(arr) {
  *   [ 'one','one','one','zero' ]     => [ 'zero','one','one','one' ]
  */
 function sortDigitNamesByNumericOrder(arr) {
-   throw new Error('Not implemented');
+   const qwer = [ 'zero','one','two','three','four','five','six','seven','eight','nine'];
+   let res = [];
+   let sort = []; 
+   arr.map(a => {sort.push(qwer.indexOf(a))})
+   sort.sort();
+   sort.map(a => res.push(qwer[a]))
+   return res;
 }
 
 /** 
@@ -568,7 +596,15 @@ function getElementByIndexes(arr, indexes) {
  * 
  */
 function swapHeadAndTail(arr) {
-    throw new Error('Not implemented');
+   let res = [];
+   let len = arr.length;
+   let mid = Math.floor(len/2);
+   let head = arr.slice(0, mid);
+   let tail = arr.slice(mid);
+   if (len < 2) return arr;
+   else if(len % 2 === 0)res = tail.concat(head);
+   else res = tail.slice(1).concat(arr[mid], head);
+   return res;
 }
 
 
